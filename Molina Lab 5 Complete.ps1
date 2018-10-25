@@ -1,6 +1,7 @@
 ﻿#user inputs a name and path for fileserver folder
 #ask if user is sure, then run script
 
+function FOLDERSANDMESSAGES{
 write-host "You will create folders and welcome messages."
 
 $askfilename = read-host "Enter file name"
@@ -22,6 +23,7 @@ if($answer -eq "y"){
 }
 else {
     write-host "Go directly to jail. Do not pass go. Do not collect 200 dollars."
+    }
     }
 
 #use a foreach loop on the given variable and have the loop multiply each number
