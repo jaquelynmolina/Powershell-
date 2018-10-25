@@ -56,3 +56,18 @@ foreach($server in $serverlist){
 FOLDERSANDMESSAGES
 PICKANUMBERANYNUMBER
 SERVERCONNECT
+
+#below is currently not working. getting json files, but no text in the file.
+
+set-location C:\Practice
+
+$printerlist = get-printer
+
+foreach($printer in $printerlist){
+    new-item -type directory -name $printer.name
+    }
+
+foreach($item in get-childitem C:\practice\){
+    $printerinfo = get-printer | convertto-json | out-file info.json
+    new-item -name info.json -value $printerinfo -path C:\practice\$item
+    }
