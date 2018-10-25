@@ -43,6 +43,7 @@ foreach ($number in $num){
 
 #import and use a foreach loop to run test-connection on each server in serverlist.csv
 
+function SERVERCONNECT{
 write-host "You are about to test server connectivity."
 
 $serverlist = import-csv C:\serverlist.csv   
@@ -50,3 +51,8 @@ $serverlist = import-csv C:\serverlist.csv
 foreach($server in $serverlist){
     test-connection $server.servers
     }
+    }
+    
+FOLDERSANDMESSAGES
+PICKANUMBERANYNUMBER
+SERVERCONNECT
